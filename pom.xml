@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>it.pagopa.pn</groupId>
+		<artifactId>pn-parent</artifactId>
+		<version>2.1.1</version>
+		<relativePath />
+	</parent>
+
+	<artifactId>pn-servizifiduciari-spapi</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>pn-servizifiduciari-spapi</name>
+	<description>An implementation of sign and PEC interface</description>
+	<scm>
+		<connection>${git.conn}</connection>
+		<developerConnection>${git.devConn}</developerConnection>
+		<url>${git.url}</url>
+		<tag>HEAD</tag>
+	</scm>
+	<properties>
+		<logbackjackson.version>0.1.5</logbackjackson.version>
+		<sonar.coverage.exclusions>
+			src/test/java/**
+		</sonar.coverage.exclusions>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>it.pagopa.pn</groupId>
+			<artifactId>pn-commons</artifactId>
+			<version>2.2.4</version>
+			<exclusions>
+				<exclusion>
+					<groupId>it.pagopa.tech.lollipop-consumer-java-sdk</groupId>
+					<artifactId>core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>it.pagopa.tech.lollipop-consumer-java-sdk</groupId>
+					<artifactId>http-verifier</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>it.pagopa.tech.lollipop-consumer-java-sdk</groupId>
+					<artifactId>assertion-rest-client-native</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>it.pagopa.tech.lollipop-consumer-java-sdk</groupId>
+					<artifactId>identity-service-rest-client-native</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.janino/janino -->
+		<dependency>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+					</excludes>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
