@@ -10,6 +10,9 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * Class that represents the messages in the folder INBOX, their number and the result of the operation
+ */
 public class PnGetMessagesResponse {
 
     PnListOfMessages pnListOfMessages;

@@ -7,6 +7,9 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
+/**
+ * A class that represents the signed document and the result of the operation
+ */
 public class PnSignDocumentResponse {
 
     @ToString.Exclude
