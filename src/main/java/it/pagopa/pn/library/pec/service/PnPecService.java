@@ -13,27 +13,27 @@ public interface PnPecService {
 
     /**
      * Method that retrieves the messages not already read.
-     * @param limit : the max number of messages to retrieve
-     * @return PnGetMessagesResponse: the unread messages for a maximum of items coherent with
-     * the set limit.
+     * @param limit : the max number of messages to retrieve from the folder INBOX
+     * @return PnGetMessagesResponse: the unread messages retrieved from the folder INBOX
+     * for a maximum of items coherent with the set limit.
      */
     Mono<PnGetMessagesResponse> getUnreadMessages(int limit);
 
     /**
-     * Method that marks a specific message as read
+     * Method that marks a specific message inside the folder INBOX as read
      * @param messageID : the ID of the message to mark as read
      * @return Mono<Void>
      */
     Mono<Void> markMessageAsRead(String messageID);
 
     /**
-     * Method that counts how many messages are present in that specific mailbox
-     * @return the number of read and unread messages in the mailbox
+     * Method that counts how many messages are present in the folder INBOX
+     * @return the number of read and unread messages in the folder INBOX
      */
     Mono<Integer> getMessageCount();
 
     /**
-     * Method that deletes a specific message
+     * Method that deletes a specific message contained in the folder INBOX
      * @param messageID : the ID of the message to delete
      * @return Mono<Void>
      */
