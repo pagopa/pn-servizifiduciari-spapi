@@ -6,8 +6,9 @@ import reactor.core.publisher.Mono;
 public interface PnPecService {
     /**
      * Method that sends a PEC mail
-     * @param message : the message to send, eventual attachments included
-     * @return Mono<String> : the message ID of the mail that has been sent.
+     * @param message : the message to send, ID and eventual attachments included.
+     * @return Mono<String> : the ID of the mail that has been sent, it is the
+     * ID included in the message, not a server-generated one.
      */
     Mono<String> sendMail(byte[] message);
 
